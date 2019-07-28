@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import Menu from './Menu';
+import Login from "./Login";
 
 class App extends React.Component {
     render() {
-
         const  menuItems  = [
             { title: 'Главная', href: '/'},
             { title: 'О нас', href: '/about'},
@@ -16,8 +16,8 @@ class App extends React.Component {
         return (
             <div>
                 <h1>Первое приложение на React</h1>
-                <p>Hello React</p>
                 <Menu items={menuItems}/>
+                <Login />
             </div>
         );
     }
