@@ -1,24 +1,24 @@
 import React, {Component} from 'react';
 import {Link} from "react-router";
 
-class UserProfile extends Component {
+class PostBody extends Component {
     render() {
         return (
             <div className="card border-secondary mb-3">
                 <div className="card-header">
-                    <Link to={`/users/${this.props.id}`}>
-                        {this.props.username}
+                    <Link to={`/posts/${this.props.id}`}>
+                        {this.props.title}
                     </Link>
                 </div>
                 <div className="card-body text-secondary">
-                    <p>{this.props.name}</p>
-                    <p>{this.props.email}</p>
-                    <p>{this.props.phone}</p>
-                    <p>{this.props.website}</p>
+                    <Link to={`/users/${this.props.userId}`}>
+                        Пользователь: {this.props.userId}
+                    </Link>
+                    <p>{this.props.body}</p>
                 </div>
             </div>
         );
     }
 }
 
-export default UserProfile;
+export default PostBody;
