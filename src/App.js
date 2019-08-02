@@ -1,37 +1,52 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Menu from './Menu';
-import Login from "./Login";
+import "./app/styles/style.css";
+
+import Blog from "./app/components/Blog";
+import WelcomeModal from "./app/components/WelcomeModal";
+
 
 class App extends React.Component {
     render() {
-        const  menuItems  = [
-            { title: 'Главная', href: '/'},
-            { title: 'О нас', href: '/about'},
-            { title: 'Услуги', href: '/service'},
-            { title: 'Контакты', href: '/contacts'},
+        const  blogPosts  = [
+            {
+                title: 'Title 1',
+                postBody: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. ' +
+                    'Aspernatur consectetur corporis error fugiat inventore labore nesciunt nostrum reprehenderit, ullam. ' +
+                    'Accusantium assumenda aut facere, ipsam molestias neque omnis quam tempore. Maiores.',
+                postDate: '01.08.2019'
+            },
+            {
+                title: 'Title 2',
+                postBody: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. ' +
+                    'Aspernatur consectetur corporis error fugiat inventore labore nesciunt nostrum reprehenderit, ullam. ' +
+                    'Accusantium assumenda aut facere, ipsam molestias neque omnis quam tempore. Maiores.',
+                postDate: '02.08.2019'
+            },
+            {
+                title: 'Title 3',
+                postBody: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. ' +
+                    'Aspernatur consectetur corporis error fugiat inventore labore nesciunt nostrum reprehenderit, ullam. ' +
+                    'Accusantium assumenda aut facere, ipsam molestias neque omnis quam tempore. Maiores.',
+                postDate: '03.08.2019'
+            },
+            {
+                title: 'Title 4',
+                postBody: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. ' +
+                    'Aspernatur consectetur corporis error fugiat inventore labore nesciunt nostrum reprehenderit, ullam. ' +
+                    'Accusantium assumenda aut facere, ipsam molestias neque omnis quam tempore. Maiores.',
+                postDate: '04.08.2019'
+            },
         ];
 
         return (
             <div>
-                <h1>Первое приложение на React</h1>
-                <Menu items={menuItems}/>
-                <Login />
+                <Blog posts={blogPosts}/>
+                <WelcomeModal />
             </div>
         );
     }
 }
-
-/*
-const App = props => {
-    return (
-        <div>
-            <h1> Первое приложение на React</h1>
-            <p>Функциональный компонент</p>
-        </div>
-    );
-};
- */
 
 ReactDOM.render(<App/>, document.querySelector('#root'));
