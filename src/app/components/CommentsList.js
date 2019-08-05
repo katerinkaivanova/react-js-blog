@@ -12,7 +12,7 @@ class CommentsList extends Component {
     }
 
     render() {
-        if (!this.state.comments) {
+        if (!this.state.comments.length) {
             return null
         }
 

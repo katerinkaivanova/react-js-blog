@@ -12,7 +12,7 @@ class PostsList extends Component {
     }
 
     render() {
-        if (!this.state.posts) {
+        if (!this.state.posts.length) {
             return null
         }
 
