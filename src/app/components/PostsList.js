@@ -4,34 +4,22 @@ import axios from 'axios';
 import PostBody from "./PostBody";
 
 class PostsList extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            posts: []
-        }
-    }
 
     render() {
-        if (!this.state.posts.length) {
+        if (!this.props.posts.length) {
             return null
         }
 
-        const posts = this.state.posts.map(post => {
-            return <PostBody key={post.id} {...post}/>
+        const posts = this.props.posts.map((post, index) => {
+            return <PostBody key={index} {...post}/>
         });
 
         return (
-            <div>
+            <>
                 <h1>Посты</h1>
                 {posts}
-            </div>
+            </>
         );
-    }
-
-    componentDidMount() {
-        axios.get(`https://jsonplaceholder.typicode.com/posts`).then(response => {
-            this.setState({posts: response.data});
-        });
     }
 }
 
