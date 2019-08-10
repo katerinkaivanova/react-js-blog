@@ -1,11 +1,13 @@
 import { combineReducers } from "redux"
 
 import posts from "./postsReducer"
+import post from "./postReducer"
 import comments from "./commentsReducer"
 import users from "./usersReducer"
 
 export default combineReducers({
   posts: posts,
+  post: post,
   comments: comments,
   users: users,
 })

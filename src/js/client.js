@@ -11,6 +11,7 @@ import Layout from './components/Layout';
 import Main from "./components/Main";
 import Users from "./components/Users";
 import Posts from "./components/Posts";
+import Post from "./components/Post";
 import Comments from "./components/Comments";
 import PageNotFound from "./components/PageNotFound";
 
@@ -22,15 +23,10 @@ class App extends React.Component {
                 <Router history={browserHistory}>
                     <Route path="/" component={Layout}>
                         <IndexRoute component={Main}/>
-                        <Route path="posts" component={Posts}>
-
-                        </Route>
-                        <Route path="comments" component={Comments}>
-
-                        </Route>
-                        <Route path="users" component={Users}>
-
-                        </Route>
+                        <Route path="posts" component={Posts} />
+                        <Route path="posts/:postId" component={Post} />
+                        <Route path="comments" component={Comments} />
+                        <Route path="users" component={Users} />
                         <Route path="*" component={PageNotFound} />
                     </Route>
                 </Router>
