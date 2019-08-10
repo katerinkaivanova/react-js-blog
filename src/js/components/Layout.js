@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
-import Menu from "../components/Menu";
-import MenuItem from "../components/MenuItem";
+import {connect} from 'react-redux';
+
+import Menu from "./Menu";
+import MenuItem from "./MenuItem";
 
 class Layout extends Component {
     constructor(props) {
         super(props);
-        this.brand = "React blog!";
+        this.brand = "Redux blog!";
     }
 
     isActive(href) {
