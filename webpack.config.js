@@ -1,10 +1,10 @@
 const path = require("path");
 
 module.exports = {
-    entry: "./src/App.js",
+    entry: "./src/js/client.js",
     output: {
-        filename: "main.js",
-        path: path.resolve(__dirname, "dist")
+        filename: "client.min.js",
+        path: path.resolve(__dirname, "src")
     },
     mode: "development",
     module: {
@@ -22,7 +22,7 @@ module.exports = {
     },
     devServer: {
         historyApiFallback: true,
-        contentBase: path.resolve(__dirname, "dist")
-        // historyApiFallback: { index: "dist/index.html" }
+        contentBase: path.resolve(__dirname, "src")
+        // historyApiFallback: { index: "src/index.html" }
     }
 };
